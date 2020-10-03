@@ -1,0 +1,44 @@
+<%- include('partials/header') %>
+<div class="leader-board">
+    <h1 class="lbheading">
+        <div class="text-box">
+
+            <span><i class="fas fa-trophy"></i> </span>
+            <span> &nbsp </span>
+            <span> L </span>
+            <span> E </span>
+            <span> A </span>
+            <span> D </span>
+            <span> E </span>
+            <span> R </span>
+            <span> B </span>
+            <span> O </span>
+            <span> A </span>
+            <span> R </span>
+            <span> D </span>
+        </div>
+    </h1>
+
+
+
+    <div class="jumbotron-centered">
+        <table style="width:80%">
+            <tr>
+                <th>NAME</th>
+                <th>BALANCE</th>
+                <th>NUMBER OF STOCKS</th>
+            </tr>
+            <% details.forEach(function(detail){ %>
+            <tr>
+                <td><%=detail.rank%></td>
+                <td><%=detail.FullName%></td>
+                <td> <%=detail.balance%> </td>
+                <td><%=detail.numberofstocks%> </td>
+            </tr>
+            <% }) %>
+        </table>
+
+
+    </div>
+</div>
+<%- include('partials/footer') %>
