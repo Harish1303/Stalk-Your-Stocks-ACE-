@@ -25,7 +25,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect("mongodb://localhost:27017/userdb", {
+mongoose.connect("mongodb+srv://admin-harish:easypass@cluster0.56hxn.mongodb.net/userdb", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -193,6 +193,12 @@ app.get("/login", function (req, res) {
   res.render("login");
 });
 
+app.get("/about", function (req, res) {
+  res.render("about");
+});
+app.get("/aboutopen", function (req, res) {
+  res.render("aboutopen");
+});
 app.post("/login", function (req, res) {
   const user = new User({
     username: req.body.username,
@@ -223,6 +229,6 @@ app.get("/logout", function (req, res) {
 app.get("*", function (req, res) {
   res.render("errorpage")
 })
-app.listen(3000, function () {
+app.listen(process.env.PORT || 3000, function () {
   console.log("Server is running");
 });
